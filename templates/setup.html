@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configura Wi-Fi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        select, input { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Configurazione Wi-Fi</h2>
+        <form method="post" action="/save">
+            <label for="ssid">Seleziona la tua rete Wi-Fi:</label>
+            <select name="ssid" id="ssid" required>
+                {% for network in networks %}
+                    <option value="{{ network }}">{{ network }}</option>
+                {% endfor %}
+            </select>
+            <label for="psk">Password:</label>
+            <input type="password" name="psk" id="psk" required>
+            <button type="submit">Connetti</button>
+        </form>
+    </div>
+</body>
+</html>
