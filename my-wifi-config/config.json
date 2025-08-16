@@ -1,0 +1,15 @@
+{
+  "name": "Wi-Fi Setup",
+  "version": "1.0.0",
+  "slug": "wifi_setup",
+  "description": "Configures Wi-Fi on Home Assistant OS",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "startup": "before",
+  "init": false,
+  "options": {},
+  "schema": {},
+  "image": "python:3-alpine",
+  "cmd": ["/run.sh"]
+}
+
+
